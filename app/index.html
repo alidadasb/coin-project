@@ -17,7 +17,6 @@
 <body>
   <ul class="menu">
     <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
   </ul>
 
   <!--[if lt IE 7]>
@@ -26,7 +25,7 @@
 
   <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <div>app: v<span app-version></span></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -39,5 +38,7 @@
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
+  <script src="registerApp/registerController.js"></script>
+  <script src="registerApp/registerService.js"></script>
 </body>
 </html>

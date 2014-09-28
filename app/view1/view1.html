@@ -1,1 +1,42 @@
-<p>This is the partial for view 1.</p>
+<div class="round content" ng-controller="registerController">
+    <div>
+
+        <div class="dataTable">
+            <ul>
+                <li data-ng-repeat="item in register.data.messages track by $index">{{item}}</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+
+        <label for="purchasedPrice">Purchased: $</label>
+        <input type="number" ng-model="register.purchasedPrice" id="purchasedPrice" min="1"/>
+
+        <label for="paymentAmount">Payment: $</label>
+        <input type="number" ng-model="register.paymentAmount" id="paymentAmount" min="1"/>
+
+        <button name="ENTER" ng-click="cashOut();">Cash</button>
+    </div>
+    <div>
+        <h3>
+            <div class="round display" ng-model="register.display">{{register.display}}</div>
+        </h3>
+
+        <h1>
+            <div class="round calculatorDisplay" ng-model="register.calculatorDisplay">{{register.calculatorDisplay}}
+            </div>
+        </h1>
+    </div>
+
+    <div>
+        <div class="register clear">
+            <img src="assets/Uniwell CX3500 Front.jpg" class="round" alt="Smiley face" height="520" width="520">
+        </div>
+
+        <div class="dataTable">
+            <ul>
+                <li ng-repeat="item in register.data.denominations">{{item.name}} : {{item.availableAmount}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
