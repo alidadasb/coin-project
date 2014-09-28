@@ -7,16 +7,16 @@ angular.module('myApp').factory('registerService', function () {
     var data = {
         messages: [],
         denominations: {
-            1: { availableAmount: 100, name: "Penny"},
-            5: { availableAmount: 3, name: "Nickel"},
-            10: { availableAmount: 2, name: "Dime"},
-            25: { availableAmount: 10, name: "Quarter"},
-            50: { availableAmount: 100, name: "Fifty cents"},
-            100: { availableAmount: 100, name: "Ten dollar"},
-            200: { availableAmount: 100, name: "Two dollar"},
-            500: { availableAmount: 100, name: "Five dollar"},
-            1000: { availableAmount: 100, name: "Ten dollar"},
-            2000: { availableAmount: 100, name: "Twenty dollar"}
+            1: { availableAmount: 100, name: "Penny", value: 1},
+            5: { availableAmount: 3, name: "Nickel", value: 5},
+            10: { availableAmount: 2, name: "Dime", value: 10},
+            25: { availableAmount: 10, name: "Quarter", value: 25},
+            50: { availableAmount: 100, name: "Fifty cents", value: 50},
+            100: { availableAmount: 100, name: "Ten dollar", value: 100},
+            200: { availableAmount: 100, name: "Two dollar", value: 200},
+            500: { availableAmount: 100, name: "Five dollar", value: 500},
+            1000: { availableAmount: 100, name: "Ten dollar", value: 1000},
+            2000: { availableAmount: 100, name: "Twenty dollar, value: 2000"}
         }};
 
     function getAvailableCoins() {
@@ -113,7 +113,10 @@ angular.module('myApp').factory('registerService', function () {
 
     return {
         makeChange: makeChange,
-        getData: getData
+        getData: getData,
+        _private: {
+            getAvailableCoins: getAvailableCoins
+        }
     };
 });
 
